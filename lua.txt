@@ -1,0 +1,22 @@
+08:27:03.700440 400234653262us tsft 1.0 Mb/s 2412 MHz 11g -86dB signal [bit 29] Acknowledgment RA:f4:f1:e1:56:46:f1
+
+print('')
+
+-- a = '08:27:03.700440 400234653262us tsft 1.0 Mb/s 2412 MHz 11g -86dB signal [bit 29] Acknowledgment RA:f4:f1:e1:56:46:f1'
+a = arg[1]
+print (a)
+
+
+b1 = string.sub(a, 0, 8)
+
+i , j = string.find(a, "dB")
+print (i,j)
+b2 = string.sub(a, i-3, i-1)
+
+i , j = string.find(a, "RA:")
+print (i,j)
+j = string.len(a)
+b3 = string.sub(a, i+3, j)
+
+
+print (b1, b2, b3)
